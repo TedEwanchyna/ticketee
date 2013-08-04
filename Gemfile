@@ -49,3 +49,4 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl', '1.3.3'
 end
+gem 'devise', '~> 1.4.3'
