@@ -9,7 +9,7 @@ class Admin::UsersController < Admin::BaseController
   end
   def create
     @user = User.new(params[:user])
-    #set_admin
+    set_admin
     if @user.save(params[:user])
       flash[:notice] = "User has been created."
       redirect_to admin_users_path
@@ -28,7 +28,7 @@ class Admin::UsersController < Admin::BaseController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end
-    #set_admin
+    set_admin
     if @user.update_attributes(params[:user])
       flash[:notice] = "User has been updated."
       redirect_to admin_users_path
