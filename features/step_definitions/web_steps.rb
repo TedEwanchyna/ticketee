@@ -55,7 +55,7 @@ end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   #print page.html
-  click_link(link)
+  click_link(link,  :match => :prefer_exact)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
