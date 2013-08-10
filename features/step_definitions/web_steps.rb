@@ -54,6 +54,7 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
+  #print page.html
   click_link(link)
 end
 
@@ -103,6 +104,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
+  #print page.html
   if page.respond_to? :should
     page.should have_content(:all,text)
   else
