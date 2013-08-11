@@ -8,14 +8,10 @@ Background:
   | email | password | admin |
   | user@ticketee.com | password | false |
   And "user@ticketee.com" can view the "Internet Explorer" project
+  And "user@ticketee.com" can create tickets in the "Internet Explorer" project
   And I am signed in as them
   And I am on the homepage
   When I follow "Internet Explorer"
-  #And I follow "New Ticket"
-  #Then I should see "You need to sign in or sign up before continuing."
-  #When I fill in "Email" with "user@ticketee.com"
-  #And I fill in "Password" with "password"
-  #And I press "Sign in"
   Then I should see "New Ticket"
   And I follow "New Ticket"
 Scenario: Creating a ticket
