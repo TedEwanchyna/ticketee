@@ -1,20 +1,15 @@
-Given /^"([^"]*)" can view the "([^"]*)" project$/ do |user, project|
-  Permission.create!(:user => User.find_by_email!(user),
-                    :thing => Project.find_by_name!(project),
-                    :action => "view")
+permission_step = /^"([^"]*)" can ([^"]*?) ([o|i]n)?\s?the "([^"]*)" project$/
+
+Given permission_step do |user, permission, on, project|
+  create_permission(user, find_project(project), permission)
 end
-  # note:must add ':user, :thing' to models's attributes or pass ids as below ...
-  #uid = User.find_by_email!(user).id
-  #pid =  Project.find_by_name!(project).id
-  #Permission.create!(:user_id => uid,
-  #                  :thing_id => pid,
-  #                  :action => "view")
 
-
-Given /^"([^"]*)" can create tickets in the "([^"]*)" project$/ do |user, project|
+def create_permission(email, object, action)
   Permission.create!(:user => User.find_by_email!(email),
-                     :thing => Project.find_by_name!(project),
-                     :action => "create tickets")
-
+                     :thing => object,
+                     :action => action)
 end
 
+def find_project(name)
+  Project.find_by_name!(name)
+end
