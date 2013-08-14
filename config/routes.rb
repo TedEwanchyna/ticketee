@@ -19,10 +19,14 @@ Ticketee::Application.routes.draw do
     :as => 'confirm_user'
 
   root :to => 'projects#index'
+
   resources :projects do
     resources :tickets
   end
 
+  resources :tickets do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
