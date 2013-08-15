@@ -5,6 +5,13 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
+    <p>
+      <%= f.label :state_id %>
+      <% if @states %> # hack to make 2nd scenario work
+      <%= f.select :state_id , @states.map { |s| [s.name, s.id] },
+                   :selected => @ticket.state_id %>
+      <% end %>        # hack to make 2nd scenario work
+    </p>
   <%= f.submit %>
 <% end %>
 
