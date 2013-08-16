@@ -55,7 +55,7 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  #print page.html
+  print page.html
   click_link(link,  :match => :prefer_exact)
 end
 
