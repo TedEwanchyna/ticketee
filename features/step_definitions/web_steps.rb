@@ -60,6 +60,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  #print page.html
   fill_in(field, :with => value)
 end
 
