@@ -19,5 +19,4 @@ class Comment < ActiveRecord::Base
       self.ticket.state = self.state
       self.ticket.save!
     end
-
 end
