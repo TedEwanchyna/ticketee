@@ -18,6 +18,8 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
+# for debugging on X
+# Then show me the page
 
 require 'uri'
 require 'cgi'
