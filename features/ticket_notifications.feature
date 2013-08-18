@@ -23,5 +23,9 @@ Scenario: Ticket owner is automatically subscribed to a ticket
 #  Then save and open current email
   Then they should see "updated the Release date ticket" in the email body
   And they should see "[ticketee] TextMate 2 - Release date" in the email subject
-  Then they click the first link in the email
+  Then they follow "view this ticket online here" in the email
   Then I should see "Release date" within "#ticket h2"
+  Then they should see "updated the Release date ticket" in the email body
+  And the email should contain 2 parts
+  And there should be a part with content type "text/plain"
+  And there should be a part with content type "text/html"
