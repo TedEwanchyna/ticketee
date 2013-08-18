@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>
+      Ticketee
+  </title>
+  <link type="text/css" rel="stylesheet" media="all" href="/assets/application.css" />
+  <style>
+  </style>
+
+  <script type="text/javascript" src="/assets/application.js"></script>
+  
+</head>
+<body>
+<h1><a href="/">Ticketee</a></h1>
+<nav>
+    Signed in as user@ticketee.com
+    <a rel="nofollow" data-method="delete" href="/users/sign_out">Sign out</a>
+
+
+  
+</nav>
+
+<div id="ticket">
+  <h2>A tag</h2>
+    
+  <br /><small>Created by user@ticketee.com</small>
+  
+  <p>Tagging a ticket!</p>
+  <div id="tags"><span id="tag-this-tag-must-die" class="tag">
+  <a url="/tickets/1/tags/1/remove" rel="nofollow" html="{:id=&gt;&quot;delete-this-tag-must-die&quot;}" data-remote="true" data-method="delete" href="/tickets/1/tags/1/remove">x</a>
+this-tag-must-die
+</span>
+</div>
+
+</div>
+
+<h3>Comments</h3>
+<div id="comments">
+      There are no comments for this ticket.
+</div>
+
+<strong>New comment</strong>
+<form method="post" id="new_comment" class="new_comment" action="/tickets/1/comments" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="✓" name="utf8" /></div>
+  
+  <p>
+    <label for="comment_text">Text</label><br />
+    <textarea rows="20" name="comment[text]" id="comment_text" cols="40"></textarea>
+  </p>
+  <input type="submit" value="Create Comment" name="commit" />
+</form>
+
+
+
+
+
+</body></html>
