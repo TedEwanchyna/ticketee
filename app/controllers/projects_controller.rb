@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
 def index
   @projects = Project.for(current_user).all
 end
+def show
+  @tickets = @project.tickets
+end
 def new
   @project = Project.new
 end
@@ -18,9 +21,6 @@ def create
     flash[:alert] = "Project has not been created."
     render :action => "new"
   end
-end
-def show
- #@project = Project.find(params[:id])
 end
 
 def edit
