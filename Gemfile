@@ -40,6 +40,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :test, :development do
+  gem 'gmail'
   gem 'rspec-rails', '~> 2.5'
 end
 
