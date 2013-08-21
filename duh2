@@ -1,0 +1,2 @@
+    mail.from.should eql(["solicadmi+#{comment.project.id}+" +
+      "#{comment.ticket.id}@gmail.com"])
