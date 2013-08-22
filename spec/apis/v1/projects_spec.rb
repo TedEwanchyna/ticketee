@@ -21,7 +21,7 @@ describe "/api/v1/projects", :type => :api do
 
       projects = JSON.parse(last_response.body)
       projects.any? do |p|
-        p["project"]["name"] == "Ticketee" # this is wrong!
+        p["project"]["name"] == "Ticketee"
       end.should be_true
     end
   end
