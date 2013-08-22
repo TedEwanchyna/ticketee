@@ -1,3 +1,4 @@
+#DatabaseCleaner.strategy = :truncation # http://nickoneill.com/validation-failed-has-already-been-taken/
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
