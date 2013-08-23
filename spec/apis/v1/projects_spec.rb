@@ -4,15 +4,16 @@ describe "/api/v1/projects", :type => :api do
   let(:user) { create_user! }
   let(:token) { user.authentication_token }
 
-    before do
-      @project = Factory(:project)
-      user.permissions.create!(:action => "view", :thing => @project)
-
-      Factory(:project, :name => "Access Denied")
-    end
+  before do
+    @project = Factory(:project)
+    user.permissions.create!(:action => "view", :thing => @project)
+  end
 
   context "projects viewable by this user" do
 
+    before do
+      Factory(:project, :name => "Access Denied")
+    end
     let(:url) { "/api/v1/projects" }
     it "json" do
       #get "#{url}.json"
@@ -41,6 +42,11 @@ describe "/api/v1/projects", :type => :api do
   end
 
   context "creating a project" do
+    before do
+      user.admin = true
+      user.save
+    end
+
     let(:url) { "/api/v1/projects" }
     it "successful JSON" do
       post "#{url}.json", :token => token,
