@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -40,6 +39,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'gmail'
   gem 'rspec-rails', '~> 2.5'
 end
@@ -51,8 +51,16 @@ group :test do
   gem 'factory_girl', '1.3.3'
   gem 'email_spec'
 end
+group :development do
+  gem 'capistrano'
+end
+
 gem 'devise', '~> 1.4.3'
 gem 'cancan'
 gem 'paperclip'
 gem 'searcher'
 gem 'selenium-webdriver'
+
+group :production do
+  gem 'pg'
+end
