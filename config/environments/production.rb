@@ -52,7 +52,8 @@ Ticketee::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
    config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => '192.34.59.233:8080' }
 
 #  config.action_mailer.smtp_settings = {
 #  :address              => "smtp.gmail.com",
